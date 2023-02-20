@@ -76,43 +76,39 @@ fun CardEmpleados(empleado: Usuario) {
         contentColor = Color.White,
         shape = RoundedCornerShape(corner = CornerSize(16.dp))
     ) {
-        Row(
+
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(20.dp)
-                .clickable { mostrarMensaje(context = context, empleado.nombre) }
+                .clickable { mostrarMensaje(context = context, empleado.nombre) },
+            Arrangement.Center,
         ) {
-            Column(
-                modifier = Modifier
-                    .weight(1f),
-                Arrangement.Center,
-            ) {
-                Text(
-                    text = empleado.nombre,
-                    style = TextStyle(
-                        color = Color.White,
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold
-                    ),
-                    modifier = Modifier.align(Alignment.CenterHorizontally)
-                )
-                Text(
-                    text = empleado.email,
-                    style = TextStyle(
-                        color = Color.White,
-                        fontSize = 16.sp
-                    ),
-                    modifier = Modifier.align(Alignment.CenterHorizontally)
-                )
-                Text(
-                    text = empleado.puesto,
-                    style = TextStyle(
-                        color = Color.White,
-                        fontSize = 16.sp
-                    ),
-                    modifier = Modifier.align(Alignment.CenterHorizontally)
-                )
-            }
+            Text(
+                text = empleado.nombre,
+                style = TextStyle(
+                    color = Color.White,
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold
+                ),
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
+            Text(
+                text = empleado.email,
+                style = TextStyle(
+                    color = Color.White,
+                    fontSize = 16.sp
+                ),
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
+            Text(
+                text = empleado.puesto,
+                style = TextStyle(
+                    color = Color.White,
+                    fontSize = 16.sp
+                ),
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            )
         }
     }
 }
